@@ -18,14 +18,21 @@ storage:
 #  max_read_records_count: 10
 #  max_records_per_file: 10000
 connectors:
-  - name: MQTT Broker Connector
-    type: mqtt
-    configuration: mqtt.json
+#  - 
+#    name: MQTT Broker Connector
+#    type: mqtt
+#    configuration: mqtt.json
+
+#  -
+#    name: Modbus Connector
+#    type: modbus
+#    configuration: modbus.json
 
   -
-    name: Modbus Connector
-    type: modbus
-    configuration: modbus.json
+    name: Custom Tcp Connector
+    type: tcp
+    configuration: custom_tcp.json
+    class: CustomTcpConnector
 
 #  -
 #    name: Modbus Connector
@@ -76,8 +83,8 @@ connectors:
 #    type: ftp
 #    configuration: ftp.json
 #
-#  -
-#    name: Custom Serial Connector
-#    type: serial
-#    configuration: custom_serial.json
-#    class: CustomSerialConnector
+  -
+    name: Custom Serial Connector
+    type: serial
+    configuration: custom_serial.json
+    class: CustomSerialConnector
